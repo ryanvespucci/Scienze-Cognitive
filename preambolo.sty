@@ -5,10 +5,31 @@
 \usepackage[italian]{babel}
 \usepackage{eurosym} 			% simbolo euro
 \usepackage[output-decimal-marker={,}]{siunitx} % include le unità di misura del Sistema Internazionale con il separatore decimale ","
+\usepackage{pdflscape}			% permette di ruotare in landscape singole pagine
+
+% Colori
+\usepackage{xcolor}
+\definecolor{urlcolor}{HTML}{9B002A}
 
 % Ipertesto
 \usepackage{url} 				% abilita gli url evitando orribili a capo
-\usepackage[hidelinks]{hyperref} % rende i riferimenti link ipertestuali
+\usepackage[pdftex,plainpages=false]{hyperref}
+
+% break also on hyphens inside the \url command
+\def\UrlBreaks{\do\.\do\@\do\\\do\/\do\!\do\_\do\|\do\;\do\>\do\]%
+  \do\)\do\,\do\?\do\'\do+\do\=\do\#\do-} % \do- is new!
+
+\urlstyle{sf}
+
+\hypersetup{%
+  colorlinks=true,
+  linkcolor=black,
+  anchorcolor=black,
+  citecolor=black,
+  urlcolor=urlcolor,
+  breaklinks,
+  pdfborder=0 0 0,
+}
 
 % Matematica
 \usepackage{amsmath} 			% abilita il pacchetto matematica
@@ -19,16 +40,29 @@
 \usepackage{graphicx} 			% consente l'uso del comando includegraphics
 \usepackage{rotating} 			% consente di ruotare le immagini
 \usepackage{subfig} 			% consente l'uso di sottofigure (richiede anche il pacchetto caption)
-\usepackage[font=small]{caption}
 \usepackage{tabularx} 			% opzioni avanzate per le tabelle
 \usepackage{indentfirst} 		% indenta la prima riga del paragrafo
 \usepackage{changepage}
 \usepackage{ccicons}
 
+% Caption
+\usepackage{caption} 			% modifica le impostazioni del caption
+\captionsetup[figure]%
+	{font={footnotesize,rm},%
+	justification=RaggedRight,%
+	singlelinecheck=false}
+\captionsetup[table]%
+	{font={footnotesize,rm},%
+	justification=RaggedRight,%
+	singlelinecheck=false,%
+	position=bottom}
+
 % Sezioni del testo
 \usepackage{pdfpages}
 \usepackage{makeidx} 			% abilita l'indice analitico
+\makeindex
 \usepackage[backend=bibtex, style=authortitle]{biblatex} % bibliografia
+\addbibresource{Bibliografia.bib} % importa il database della bibliografia
 
 % suddivide la bibliografia in due parti, letture e Wikipedia
 \defbibheading{letture}{\subsection*{Letture di approfondimento}}
@@ -45,9 +79,9 @@
 	
 		\begin{adjustwidth*}{6em}{}
 			
-			Questo testo è stato scritto usando \LaTeX{}, sistema originariamente sviluppato da Leslie Lamport, basato su \TeX{} creato da Donald Knuth.
+			Questo testo è stato scritto usando \LaTeX{}, sistema originariamente sviluppato da Leslie Lamport, basato su \TeX{} creato da Donald Knuth.\\
 			\bigskip
-			Questo lavoro è rilasciato sotto licenza Creative Commons 4.0. \ccbyncsa
+			Questo lavoro è rilasciato sotto licenza Creative Commons 4.0. \ccbyncsa\\
 			\bigskip
 			Per segnalare eventuali errori o integrare materiale, inviare una email a \href{mailto:marco.farina@tinybullstudios.com}{\texttt{marco.farina@tinybullstudios.com}}
 			

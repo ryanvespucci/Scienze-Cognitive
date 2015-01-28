@@ -1,5 +1,5 @@
 \documentclass[11pt,%
-				draft,%
+				%draft,%
 				a4paper]{report}
 				
 \usepackage{preambolo}
@@ -44,11 +44,14 @@
 
 	% pagine finali
 	\addcontentsline{toc}{section}{Mappa concettuale}
-	\includepdf[pages={1}]{img/mappa.pdf}
+	\begin{landscape}
+		\includepdf[pages={1}]{img/mappa.pdf}
+	\end{landscape}
 	
 	\cleardoublepage
 	\addcontentsline{toc}{chapter}{\indexname}	\printindex
 	
+	\cleardoublepage
 	\addcontentsline{toc}{chapter}{\bibname}
 	\nocite{*}
 	\printbibliography[heading=letture,nottype=online] 

@@ -1,0 +1,66 @@
+% Packages %
+% Pagina e font
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{eurosym} 			% simbolo euro
+\usepackage[output-decimal-marker={,}]{siunitx} % include le unità di misura del Sistema Internazionale con il separatore decimale ","
+
+% Ipertesto
+\usepackage{url} 				% abilita gli url evitando orribili a capo
+\usepackage[hidelinks]{hyperref} % rende i riferimenti link ipertestuali
+
+% Matematica
+\usepackage{amsmath} 			% abilita il pacchetto matematica
+\usepackage{amsfonts} 			% carica il font matematico avanzato
+\usepackage{syllogism} 			% formattazione dei sillogismi
+
+% Grafica
+\usepackage{graphicx} 			% consente l'uso del comando includegraphics
+\usepackage{rotating} 			% consente di ruotare le immagini
+\usepackage{subfig} 			% consente l'uso di sottofigure (richiede anche il pacchetto caption)
+\usepackage[font=small]{caption}
+\usepackage{tabularx} 			% opzioni avanzate per le tabelle
+\usepackage{indentfirst} 		% indenta la prima riga del paragrafo
+\usepackage{changepage}
+\usepackage{ccicons}
+
+% Sezioni del testo
+\usepackage{pdfpages}
+\usepackage{makeidx} 			% abilita l'indice analitico
+\usepackage[backend=bibtex, style=authortitle]{biblatex} % bibliografia
+
+% suddivide la bibliografia in due parti, letture e Wikipedia
+\defbibheading{letture}{\subsection*{Letture di approfondimento}}
+\defbibheading{wiki}{\subsection*{Riferimenti su Wikipedia}}
+
+
+% Nuovi comandi %
+% Colophon
+\newcommand{\makecolophon}{%
+	\thispagestyle{empty}
+	\begin{flushleft}
+		\small
+		\null\vspace*{\fill}
+	
+		\begin{adjustwidth*}{6em}{}
+			
+			Questo testo è stato scritto usando \LaTeX{}, sistema originariamente sviluppato da Leslie Lamport, basato su \TeX{} creato da Donald Knuth.
+			\bigskip
+			Questo lavoro è rilasciato sotto licenza Creative Commons 4.0. \ccbyncsa
+			\bigskip
+			Per segnalare eventuali errori o integrare materiale, inviare una email a \href{mailto:marco.farina@tinybullstudios.com}{\texttt{marco.farina@tinybullstudios.com}}
+			
+	%	\bigskip
+	%	
+	%	Il codice sorgente \LaTeX può essere scaricato da GitHub all'indirizzo 
+	%	
+	%	\bigskip
+	%	
+	%	Una versione .mobi per eBook è disponibile all'indirizzo 
+			
+		\end{adjustwidth*}
+	
+	\end{flushleft}
+
+}

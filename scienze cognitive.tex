@@ -1,0 +1,57 @@
+\documentclass[11pt,%
+				draft,%
+				a4paper]{report}
+				
+\usepackage{preambolo}
+
+\author{Lezioni del prof. Guido Boella \\ Appunti di Marco Farina}\title{Appunti del corso \\ ``Sistemi Cognitivi''}
+
+\begin{document}
+
+    \pagenumbering{alph}
+    \maketitle
+    \makecolophon
+    \pagenumbering{roman}
+    \clearpage
+    \cleardoublepage
+    \tableofcontents
+%    \clearpage
+%    \listoffigures
+%    \clearpage
+%    \listoftables
+%    \clearpage
+%    \listofsourcecode
+
+    \clearpage
+    \cleardoublepage
+	\pagenumbering{arabic}
+	
+	\part{Storia delle scienze cognitive}
+	  \include{capitoli/storia}
+	  \include{capitoli/psicologia}
+	  \include{capitoli/intelligeza}
+	
+	\part{La mente umana}
+	  \include{capitoli/conoscenza}
+	  \include{capitoli/memoria}
+	  \include{capitoli/metafora}
+	
+	\part{Categorie e ragionamento}
+	  \include{capitoli/fuzzy}
+	  \include{capitoli/categorie}
+	  \include{capitoli/modelli}
+	
+
+	% pagine finali
+	\addcontentsline{toc}{section}{Mappa concettuale}
+	\includepdf[pages={1}]{img/mappa.pdf}
+	
+	\cleardoublepage
+	\addcontentsline{toc}{chapter}{\indexname}	\printindex
+	
+	\addcontentsline{toc}{chapter}{\bibname}
+	\nocite{*}
+	\printbibliography[heading=letture,nottype=online] 
+	\printbibliography[heading=wiki,type=online] 
+
+\end{document}
